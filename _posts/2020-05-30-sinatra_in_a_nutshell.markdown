@@ -1,6 +1,6 @@
 ---
 layout: post
-title:      "Sinatra in a nutshell"
+title:      "Sinatra in a Nutshell"
 date:       2020-05-30 03:42:35 -0400
 permalink:  sinatra_in_a_nutshell
 ---
@@ -10,7 +10,7 @@ permalink:  sinatra_in_a_nutshell
 
 ## 1. NUMERO UNO
 
-If your anything like me, you'll want to cut out is much monotonous work as possible this includes building a File structure. Luckily for us, there is a nice little gem Know as called [corneal](https://github.com/thebrianemory/cornealthat) will do the bulk of the work for us. Just like any other gem, you'll want to install said gem like so:
+If your anything like me, you'll want to cut out as much monotonous work as possible this includes building a File structure. Luckily for us, there is a ruby gem for that. [corneal](https://github.com/thebrianemory/cornealthat) will do the bulk of the work for us. Just like any other gem, you'll want to install said gem like so:
 
 ```ruby
 gem install corneal

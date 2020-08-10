@@ -1,20 +1,20 @@
 ---
 layout: post
 title:      "How to set up devise and omniauth-facebook "
-date:       2020-08-03 04:13:07 +0000
+date:       2020-08-03 00:13:08 -0400
 permalink:  how_to_set_up_devise_and_omniauth-facebook
 ---
 
 
 
 
-Unfortunately, I spent pretty much the first week trying to set up my omniauth,  I know how sad that sounds, as frustrating as it was, it lead me to devise. Now if your anything like me and any you need something a little more visual to help you out, follow this [link](https://www.youtube.com/watch?v=Dd8dOAL6WYs&t=266s) it will take you to the walk though, that delivered me from this nightmare.
+Unfortunately, I spent pretty much the first week trying to set up my omniauth,  I know how sad that sounds, as frustrating as it was, it leads me to devise. Now if your anything like me and any you need something a little more visual to help you out, follow this [link](https://www.youtube.com/watch?v=Dd8dOAL6WYs&t=266s) it will take you to the walkthrough, that delivered me from this nightmare.
 
 Now, I think the best strategy is to go the respective sight that you'll be using and then register as a developer and, create your ID, SECRET, key. 
 
-then you'll want to install the gem both `omniauth` and`omniauth-facebook` and of course use `bundle install ` to install the gems and their dependencies. You'll also be using a gem called `devise` go figure, right and `activerecord-session_store`
+then you'll want to install the gem both `omniauth` and`omniauth-facebook` and of course, use `bundle install ` to install the gems and their dependencies. You'll also be using a gem called `devise` go figure, right and `activerecord-session_store`
 
-You'll then want to head over to you console an run the command `EDITOR="your_editor --wait" rails credentials:edit` this will bring up you credentials with is mainly binary data . Then input your, ID and KEY like so:
+You'll then want to head over to you console an run the command `EDITOR="your_editor --wait" rails credentials:edit` this will bring up your credentials with is mainly binary data. Then input your, ID and KEY like so:
 
 ```
 facebook:
@@ -22,14 +22,14 @@ facebook:
   facebook_client_secret: 465476657657
 ```
 
-Also, you'll want to got to, [devise](https://github.com/heartcombo/devise) to look up docs on how to user views and controller and so on. Use `rails generate devise:install` to get the devise.rb in you initializers.  
+Also, you'll want to go to, [devise](https://github.com/heartcombo/devise) to look through the docs on how to use views and controllers, etc. Use `rails generate devise:install` to get the devise.rb in your initializers.  
 
 ```ruby
 config.omniauth :facebook, Rails.application.credentials.dig(:facebook, :facebook_client_id),
    Rails.application.credentials.dig(:facebook, :facebook_client_secret), scope: 'public_profile,email'
 ```
 
-There is a lot going on here but from context you can mostly derive what this code is doing. next move on to creating a `sessions_store.rb ` in your initializers folder 
+A lot is going on here but from the context, you can mostly derive what this code is doing. next move on to creating a `sessions_store.rb ` in your initializers folder 
 
 ```ruby
 Rails.application.config.session_store :active_record_store, key: '_devise-omniauth_session'
@@ -50,7 +50,7 @@ and a sessions migration in you db
 
 if you haven't already you'll also want to add attributes for `uid` and `provider`. 
 
-Then Create a User class to inherit from application and make a meth to that will create a user from a provider like so
+Then Create a User class to inherit from the application class and make a method that will create a user from a provider like so
 
 ```ruby
 class User < ApplicationRecord
@@ -68,9 +68,9 @@ class User < ApplicationRecord
 end
 ```
 
-It  isn't necessary to put all those devise attributes but some of them come in pretty handy.
+It isn't necessary to put all those devise attributes but some of them come in pretty handy.
 
-next move onto you OmniauthController, here you'll be useing the method you made in your  user class.
+next move onto you OmniauthController, here you'll be using the method you made in your user class.
 
 ```ruby
 class OmniauthController < ApplicationController
@@ -92,6 +92,6 @@ class OmniauthController < ApplicationController
 end
 ```
 
-and that's it, you should already have a devise folder in you views and if you don't check [documentation](https://github.com/heartcombo/devise) to see how or for any father questions you might have
+and that's it, you should already have a devise folder in your views and if you don't check [documentation](https://github.com/heartcombo/devise) to see how or for any father questions you might have
 
 

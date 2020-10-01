@@ -11,7 +11,7 @@ permalink:  coding_reality
 
 
 
-```js
+`js
  function shuffle (array) {
  let i = 0
     , j = 0
@@ -24,7 +24,7 @@ permalink:  coding_reality
     array[j] = temp
   }
 }
-```
+`
 
 
  

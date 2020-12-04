@@ -7,7 +7,7 @@ permalink:  how_to_set_up_auth_with_react_and_rails
 
 
 
-	It doesn’t seem obvious at the time but, it was quite simple to set up authentication, or at least the basics of it. As most Know, as your application grows it will become increasingly more difficult to balance authentication for that I would recommend a third party authentication or even a backend api like firebase or auth0, but for now if your just building a small application, which I wouldn’t realize it at the time but I was, so, lets get started. 
+It doesn’t seem obvious at the time but, it was quite simple to set up authentication, or at least the basics of it. As most Know, as your application grows it will become increasingly more difficult to balance authentication for that I would recommend a third party authentication or even a backend api like firebase or auth0, but for now if your just building a small application, which I wouldn’t realize it at the time but I was, so, lets get started. 
 FIRST THINGS FIRST, I will assume that if you’ve made it far enough to be looking up authentication your quite familiar with generators. Run the generators for both react and Rails then will want to install,
 gem install bcrypt
 gem install rack-cors

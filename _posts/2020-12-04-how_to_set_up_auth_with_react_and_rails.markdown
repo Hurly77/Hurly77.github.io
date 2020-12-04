@@ -1,7 +1,7 @@
 ---
 layout: post
 title:      "how to set up auth with react and rails"
-date:       2020-12-04 05:11:56 +0000
+date:       2020-12-04 00:11:57 -0500
 permalink:  how_to_set_up_auth_with_react_and_rails
 ---
 
